@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
         tv = (TextView) findViewById(R.id.tv);
     }
 
-    //bloquea la UI thread. Puede provocar un ANR
+    //bloquea la UI thread. Puede provocar un ANR (Application Not Responding)
     public void doSync(View v) {
     	for(int i = 0; i < 6; i++) {
     		tv.setText("Etapa: " + i);
