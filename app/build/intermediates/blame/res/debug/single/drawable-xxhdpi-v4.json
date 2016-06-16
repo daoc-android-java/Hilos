@@ -2,5 +2,9 @@
     {
         "merged": "C:\\Users\\dordonez\\GitHub\\Android\\Hilos\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\dordonez\\GitHub\\Android\\Hilos\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\GitHub\\Android\\Hilos\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Diego\\GitHub\\Android\\Hilos\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
     }
 ]

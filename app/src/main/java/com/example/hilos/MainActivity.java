@@ -82,7 +82,6 @@ public class MainActivity extends Activity {
 				try {
 					Thread.sleep(params[1]);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 					return false;
 				}
