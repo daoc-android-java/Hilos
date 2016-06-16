@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\dordonez\GitHub\Android\Hilos\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\dordonez\GitHub\Android\Hilos\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_a2c1e2e29dc2e8fbc0c83f1dfb09f8aed3b4fd68\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dordonez\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\dordonez\GitHub\Android\Hilos\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_b8d8e800fae55878057a5d5f758d7d9fa41c95ce\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dordonez\GitHub\Android\Hilos\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="bda20a51d5713b85ef4ab354db512fef65432ec9">
+        <dex dex="C:\Users\dordonez\GitHub\Android\Hilos\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_4aa3c7ce3625af442f3961dad1abdee9b7e680ce\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dordonez\GitHub\Android\Hilos\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\dordonez\GitHub\Android\Hilos\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_6804bbdc9709f804607d53f116de9be2a864cf0d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dordonez\GitHub\Android\Hilos\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="161d964780c4327aff51a1137b1f10ce9399fb8a">
+        <dex dex="C:\Users\dordonez\GitHub\Android\Hilos\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_a5d418a64855729fd51f171a558863ef230f5092\classes.dex" />
+    </item>
+
+</items>
