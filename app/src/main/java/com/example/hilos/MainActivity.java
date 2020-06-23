@@ -3,19 +3,35 @@ package com.example.hilos;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 
 public class MainActivity extends Activity {
 	TextView tv;
-	
+	HandlerThread handlerThread;
+	Handler handler;
+	ThreadPoolExecutor tpe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv = (TextView) findViewById(R.id.tv);
+        //HandlerThread
+		handlerThread = new HandlerThread("otro hilo");
+		handlerThread.start();//al finalizar su uso se debería cerrar el hilo: handlerThread.quit();
+		handler = new Handler(handlerThread.getLooper());
+		//ThreadPoolExecutor ( al finalizar debería cerrarlo: tpe.shutdown(); )
+		tpe = new ThreadPoolExecutor(2, 4, 10, TimeUnit.SECONDS, new LinkedBlockingQueue<>(50));
     }
 
     //bloquea la UI thread. Puede provocar un ANR (Application Not Responding)
@@ -60,7 +76,37 @@ public class MainActivity extends Activity {
     	};
     	t.start();
     }
-    
+
+    public void doHandler(View v) {
+		for (int i = 0; i < 6; i++) {
+			final int j = i;
+			handler.post(() -> {
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				Handler uiHandler = new Handler(Looper.getMainLooper());
+				uiHandler.post( () -> { tv.setText("Etapa" + j); } );
+			});
+		}
+	}
+
+	public void doExecutor(View v) {
+		for (int i = 0; i < 30; i++) {
+			final int j = i;
+			tpe.execute(() -> {
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				Handler uiHandler = new Handler(Looper.getMainLooper());
+				uiHandler.post( () -> { tv.setText("Etapa" + j); } );
+			});
+		}
+	}
+
     public void doAsyncTask(View v) {
     	new MiAsyncTask().execute(6, 2000);
     }    
