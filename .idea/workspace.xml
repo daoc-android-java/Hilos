@@ -12,13 +12,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acd74be8-f7e7-4f30-aa40-03cce180a0e2" name="Default" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-    </list>
+    <list default="true" id="acd74be8-f7e7-4f30-aa40-03cce180a0e2" name="Default" comment="Update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -283,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606753926066</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update">
+      <created>1623088562485</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623088562486</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -292,29 +293,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="209" y="0" key="CommitChangelistDialog2" timestamp="1606753923176">
+    <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1623088559874">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="209" y="0" key="CommitChangelistDialog2/-1191.768.1280.700/0.0.1360.728/-1366.-11.1366.728@0.0.1360.728" timestamp="1606753923176" />
-    <state width="1317" height="178" key="GridCell.Tab.0.bottom" timestamp="1606780560660">
+    <state x="307" y="0" key="CommitChangelistDialog2/-1191.781.1280.680/0.0.1360.728/-1366.13.1366.728@0.0.1360.728" timestamp="1623088559874" />
+    <state x="272" y="96" key="Vcs.Push.Dialog.v2" timestamp="1623088565848">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="178" key="GridCell.Tab.0.bottom/-1191.768.1280.700/0.0.1360.728/-1366.-11.1366.728@0.0.1360.728" timestamp="1606780560660" />
-    <state width="1317" height="178" key="GridCell.Tab.0.center" timestamp="1606780560660">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="178" key="GridCell.Tab.0.center/-1191.768.1280.700/0.0.1360.728/-1366.-11.1366.728@0.0.1360.728" timestamp="1606780560660" />
-    <state width="1317" height="178" key="GridCell.Tab.0.left" timestamp="1606780560659">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="178" key="GridCell.Tab.0.left/-1191.768.1280.700/0.0.1360.728/-1366.-11.1366.728@0.0.1360.728" timestamp="1606780560659" />
-    <state width="1317" height="178" key="GridCell.Tab.0.right" timestamp="1606780560660">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="178" key="GridCell.Tab.0.right/-1191.768.1280.700/0.0.1360.728/-1366.-11.1366.728@0.0.1360.728" timestamp="1606780560660" />
-    <state x="272" y="96" key="Vcs.Push.Dialog.v2" timestamp="1606753928559">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="272" y="96" key="Vcs.Push.Dialog.v2/-1191.768.1280.700/0.0.1360.728/-1366.-11.1366.728@0.0.1360.728" timestamp="1606753928559" />
+    <state x="272" y="96" key="Vcs.Push.Dialog.v2/-1191.781.1280.680/0.0.1360.728/-1366.13.1366.728@0.0.1360.728" timestamp="1623088565848" />
   </component>
 </project>

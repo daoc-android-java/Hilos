@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -19,7 +21,7 @@ public class MainActivity extends Activity {
 	TextView tv;
 	HandlerThread handlerThread;
 	Handler handler;
-	ThreadPoolExecutor tpe;
+	ExecutorService exsrvc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,7 @@ public class MainActivity extends Activity {
 		handlerThread.start();//al finalizar su uso se debería cerrar el hilo: handlerThread.quit();
 		handler = new Handler(handlerThread.getLooper());
 		//ThreadPoolExecutor ( al finalizar debería cerrarlo: tpe.shutdown(); )
-		tpe = new ThreadPoolExecutor(4, 8, 10, TimeUnit.SECONDS, new LinkedBlockingQueue<>(50));
+		exsrvc = Executors.newCachedThreadPool();
     }
 
     //bloquea la UI thread. Puede provocar un ANR (Application Not Responding)
@@ -95,7 +97,7 @@ public class MainActivity extends Activity {
 	public void doExecutor(View v) {
 		for (int i = 0; i < 30; i++) {
 			final int j = i;
-			tpe.execute(() -> {
+			exsrvc.execute(() -> {
 				try {
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {
