@@ -16,24 +16,14 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-
 public class MainActivity extends Activity {
 	TextView tv;
-	HandlerThread handlerThread;
-	Handler handler;
-	ExecutorService exsrvc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv = (TextView) findViewById(R.id.tv);
-        //HandlerThread
-		handlerThread = new HandlerThread("otro hilo");
-		handlerThread.start();//al finalizar su uso se debería cerrar el hilo: handlerThread.quit();
-		handler = new Handler(handlerThread.getLooper());
-		//ThreadPoolExecutor ( al finalizar debería cerrarlo: tpe.shutdown(); )
-		exsrvc = Executors.newCachedThreadPool();
     }
 
     //bloquea la UI thread. Puede provocar un ANR (Application Not Responding)
@@ -56,7 +46,7 @@ public class MainActivity extends Activity {
     	    	for(int i = 0; i < 6; i++) {
     	    		final String str = "Etapa: " + i;
     	    		//tv.setText("Etapa: " + i);//Esta instrucción cuelga la aplicación!!!
-    	    		runOnUiThread(new Runnable() {
+					runOnUiThread(new Runnable() {
     	    			@Override
     	    			public void run() {
     	    				tv.setText(str);
@@ -79,23 +69,32 @@ public class MainActivity extends Activity {
     	t.start();
     }
 
+
     public void doHandler(View v) {
+		HandlerThread handlerThread = new HandlerThread("background");
+		handlerThread.start();
+		Handler handler = new Handler(handlerThread.getLooper());
+		Handler uiHandler = new Handler(Looper.getMainLooper());
+
 		for (int i = 0; i < 6; i++) {
 			final int j = i;
 			handler.post(() -> {
+				uiHandler.post( () -> { tv.setText("Etapa " + j); } );
 				try {
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				Handler uiHandler = new Handler(Looper.getMainLooper());
-				uiHandler.post( () -> { tv.setText("Etapa" + j); } );
 			});
+
 		}
+		handlerThread.quitSafely();
 	}
 
 	public void doExecutor(View v) {
-		for (int i = 0; i < 30; i++) {
+		ExecutorService exsrvc = Executors.newCachedThreadPool();
+		Handler uiHandler = new Handler(Looper.getMainLooper());
+		for (int i = 0; i < 300; i++) {
 			final int j = i;
 			exsrvc.execute(() -> {
 				try {
@@ -103,14 +102,14 @@ public class MainActivity extends Activity {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				Handler uiHandler = new Handler(Looper.getMainLooper());
-				uiHandler.post( () -> { tv.setText("Etapa" + j); } );
+				uiHandler.post( () -> { tv.setText("Tarea " + j); } );
 			});
 		}
+		exsrvc.shutdown();
 	}
 
     public void doAsyncTask(View v) {
-    	new MiAsyncTask().execute(6, 2000);
+    	new MiAsyncTask().execute(6, 2000, 34, 56);
     }    
     
     public void doMsg(View v) {
